@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <title>Информация</title>
+      <script src="js/table.js"></script>
+      <script src="js/data.js"></script>
+      <script src="js/filter.js"></script>
+      <script src="js/sort.js"></script>
+    </head>
+    <body>
+
+        
+        <a name="Stat"></a>
+        <p>
+          <a href="Main.html#main">Наши объекты</a><br>
+          <a href="TableStat.html#Stat"><strong>Информация о наших объектах</strong></a>
+        </p>
+      <hr>   
+
+        
+<details> 
+  <summary>График</summary>
+
+<table cellpadding="5">
+  <tr> 
+    <th>Значение по оси OX</th>
+    <th>Результат</th>
+  </tr>
+
+  <tr>
+    <td>
+      <input  type="radio"  name="Type">Тип объекта<br>
+    <input  type="radio"  name="Money">Год постройки<br>
+    <input  type="radio"  name="Floors">Страна<br>
+  </td>
+
+  <td>
+    <input type="checkbox" name="colvoObj"> Количество объектов за год <br>
+    <input type="checkbox" name="maxmon"> Максимальный бюджет <br>
+    <input type="checkbox" name="minmon"> Минимальный бюджет <br>
+  </td>
+</tr>
+</table>
+
+<p>
+  <input type="submit" value="Построить">
+</p>
+<p>Здесь будет график</p>
+
+</details>
+
+
+<details> 
+  <summary>Фильтр</summary>
+
+  <form>
+    <p>
+      Название объекта: <input type="text" placeholder="Введите название" id="name">
+    </p>
+    <p>
+      Тип объекта: <input type="text" placeholder="Введите тип объекта" id="type">
+    </p>
+    <p>
+      Страна потройки: <input type="text" placeholder="Введите страну" id="country">
+    </p>
+    <p>
+      Год постройки: от <input type="number" min="2000" max="2025" placeholder="2000" id="yearFrom"> до <input type="number" min="2000" max="2025" placeholder="2025" id="yearTo">
+    </p>
+    <p>
+      Бюджет стройки: от <input type="number" min="300" max="5000" placeholder="300" id="budget_ot"> млн до <input type="number" min="300" max="5000" placeholder="2000" id="budget_do"> млн
+    </p>
+    <p>
+      Кол-во этажей: от <input type="number" min="10" max="100" placeholder="10" id="floors_ot"> до <input type="number" min="10" max="100" placeholder="100" id="floors_do">
+    </p>
+    <p>
+      Кол-во квартир: от <input type="number" min="100" max="500" placeholder="100" id="apartments_ot"> до <input type="number" min="100" max="500" placeholder="500" id="apartments_do">
+    </p>
+  </form>
+
+  <input type="button" value="Найти" id="Filterbutton">
+  <input type="button" value="Очистить" id="ClearFilter">
+  <p></p>
+
+</details>
+
+<details>
+<summary>Сортировка</summary>
+<form id="sort">
+  <p>
+    Первый уровень:
+    <select id="fieldsFirst">
+    </select>
+    По убыванию?<input type="checkbox" id="fieldsFirstDesc">
+  </p>
+  <p>
+    Второй уровень:
+    <select id="fieldsSecond">
+    </select>
+    По убыванию?<input type="checkbox" id="fieldsSecondDesc">
+  </p>
+  <p>
+    Третий уровень:
+    <select id="fieldsThird">
+    </select>
+    По убыванию?<input type="checkbox" id="fieldsThirdDesc">
+  </p>
+</form>
+<p><button id="btnSort">Отсортировать</button>
+  <button id="btnClearSort">Очистить</button></p>
+</details>
+
+<table border=1 id="table">
+</table>
+
+<script src="js/main.js"></script>
+    </body>
+</html>
